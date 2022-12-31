@@ -1,0 +1,25 @@
+<%- include('header') -%>
+<body class="is-preload">
+	<header id="header">
+		<h1>Week <%= page.key %><% if (page.additionalHeader) { %> - <%= page.additionalHeader %><% } %></h1>
+		<% if (page.image) { %>
+			<p><img src="/images/<%= page.image %>"></p>
+		<% } %>
+	</header>
+<form method="GET">
+	<% if (page.formTitle) { %>
+		<h2><%- page.formTitle %></h2>
+	<% } %>
+	
+		<input type="text" name="secret" required placeholder="What's the secret?">
+		<br/>
+		<button>
+				Submit!
+		</button>
+</form>
+<% if (page.answered && !page.correct) { %>
+	Wrong answer!
+<% } %>
+<script src="/js/<%= page.key %>.js"></script>
+</body>
+<%- include('footer') -%>

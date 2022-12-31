@@ -1,0 +1,127 @@
+<%- include('header') -%>
+
+<header id="header">
+	<h1>"Double Feature"</h1>
+</header>
+<% if(!page.correct) { %>
+<form action="/8J/" method="GET">	
+	<label for="sometext">
+	</label>
+	<input type="text" name="secret" required placeholder="What's the secret?">
+	<br/>
+	<button>
+			Submit!
+	</button>
+	<div class="row pt-5">
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint1">
+						Hint 1
+				</button>
+		</div>
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint2">
+						Hint 2
+				</button>
+		</div>
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint3">
+						Hint 3
+				</button>
+		</div>
+</div>
+</form>
+<% if (page.answered && !page.correct) { %>
+	Wrong answer!
+<% } %>
+
+<!-- The Modal -->
+<!-- The Modal -->
+<div class="modal" id="hint1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 1</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        You will need a <em>tabula recta</em>.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal" id="hint2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 2</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        You will also need a key (word).
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal" id="hint3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 3</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        This is a
+        <img src="/images/V-Cipher.png" title="Vigenère" alt="Vigenère"> cipher
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% } else { %>
+<a href="https://youtu.be/vgKUizKbGbE" title="Brag about it!">
+	AMAZING! You got it! Jump back to the comments and brag about it!
+</a>
+<small class="text-muted">
+	(But don't give away the answer)
+</small>
+<% } %>
+
+<%- include('footer') -%>

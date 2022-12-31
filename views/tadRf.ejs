@@ -1,0 +1,31 @@
+<%- include('header') -%>
+
+<header id="header">
+	<h1>Secret Riddle</h1>
+</header>
+<% if(!page.correct) { %>
+<form method="GET">	
+	<h2>Last of James' Good Books<br>15 | 7 | 14</h2>
+        <label for="sometext">
+            (3 words)
+        </label>
+	<input type="text" name="secret" required placeholder="What's the secret?">
+	<br/>
+	<button>
+			Submit!
+	</button>
+</div>
+</form>
+	<% if (page.answered && !page.correct) { %>
+		Wrong answer!
+	<% } %>
+<% } else { %>
+	<a href="https://youtu.be/XKfTJXLTaAI" title="Brag about it!">
+		AMAZING! You figured it out! Jump back to the comments and brag about it!
+	</a>
+	<small class="text-muted">
+		(But don't give away the answer)
+	</small>
+<% } %>
+
+<%- include('footer') -%>

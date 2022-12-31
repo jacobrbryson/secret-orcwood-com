@@ -1,0 +1,130 @@
+<%- include('header') -%>
+
+<header id="header">
+	<h1>"Art Martyr"</h1>
+</header>
+<% if(!page.correct) { %>
+<form action="/9J/" method="GET">	
+	<label for="sometext">
+	</label>
+	<input type="text" name="secret" required placeholder="What's the secret number?">
+	<br/>
+	<button>
+			Submit!
+	</button>
+	<div class="row pt-5">
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint1">
+						Hint 1
+				</button>
+		</div>
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint2">
+						Hint 2
+				</button>
+		</div>
+		<div class="col-12 col-lg-4 pt-2">
+				<button 
+						type="button" 
+						class="btn-secondary w-100" 
+						data-toggle="modal" data-target="#hint3">
+						Hint 3
+				</button>
+		</div>
+</div>
+</form>
+<% if (page.answered && !page.correct) { %>
+	Wrong answer!
+<% } %>
+<script src="/js/9J.js"></script>
+<!-- The Modal -->
+<div class="modal" id="hint1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 1</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        The puzzle is hidden in the video.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal" id="hint2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 2</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        There is a bit of digital art in a single frame of the video.  It has been scrambled, and needs to be rearranged to figure out the answer.  "Photoshop" might help you find it.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal" id="hint3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hint 3</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        4:14:02<br>
+        , and .<br>
+        to navigate frame by frame
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% } else { %>
+	<a href="https://youtu.be/41mwLqiwdqk" title="Brag about it!">
+		AMAZING! You figured it out! Jump back to the comments and brag about it!
+	</a>
+	<small class="text-muted">
+		(But don't give away the answer)
+	</small>
+	<br>
+	The art is by <a href="https://www.artstation.com/artwork/v2VZQ3" target="_blank">Marterio HF</a>
+	<br>
+<% } %>
+
+<%- include('footer') -%>
